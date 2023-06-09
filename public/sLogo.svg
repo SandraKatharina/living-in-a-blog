@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 355 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <clipPath id="_clip1">
+        <rect x="0" y="0" width="389.764" height="354.331"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g transform="matrix(0.5,0,0,1,0,0)">
+            <rect x="0" y="0" width="708.661" height="354.331" style="fill:rgb(252,252,252);"/>
+        </g>
+        <g transform="matrix(0.5,0,0,1,354.331,0)">
+            <rect x="0" y="0" width="708.661" height="354.331" style="fill:rgb(252,252,252);"/>
+        </g>
+    </g>
+    <g transform="matrix(-0.828653,0.00321152,-0.00321152,-0.828653,273.273,307.369)">
+        <text x="41.209px" y="254.586px" style="font-family:'Futura-Book', sans-serif;font-size:288.988px;">S</text>
+    </g>
+    <g transform="matrix(2.54997,-1.99117,2.4947,3.19481,-1067.24,-139.407)">
+        <ellipse cx="240.038" cy="278.025" rx="2.921" ry="2.394"/>
+    </g>
+    <g transform="matrix(0.527252,0,0,0.57405,68.2601,37.7226)">
+        <path d="M109.257,62.934L285.772,62.934" style="fill:none;stroke:black;stroke-width:30.24px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-29.5276,-15.5447)">
+        <circle cx="206.693" cy="192.71" r="147.638" style="fill:none;"/>
+    </g>
+</svg>
