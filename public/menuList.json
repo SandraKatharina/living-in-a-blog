@@ -1,37 +1,27 @@
 [
   {
     "id": 1,
-    "target": "./home",
+    "target": "/home",
     "caption": "HOME"
   },
   {
     "id": 2,
-    "target": "./login",
+    "target": "/login",
     "caption": "LOGIN"
   },
   {
     "id": 3,
-    "target": "./about",
+    "target": "/about",
     "caption": "ABOUT"
   },
   {
     "id": 4,
-    "target": "./contact",
+    "target": "/contact",
     "caption": "CONTACT"
   },
   {
     "id": 5,
-    "target": "./newpost",
+    "target": "/newpost",
     "caption": "NEW POST"
-  },
-  {
-    "id": 6,
-    "target": "./imprint",
-    "caption": "imprint"
-  },
-  {
-    "id": 7,
-    "target": "./privacy",
-    "caption": "privacy policy"
   }
 ]

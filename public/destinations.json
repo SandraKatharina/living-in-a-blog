@@ -14,8 +14,10 @@
     ],
     "titel": "–– most beautiful traditional way of Upcycling",
     "caption": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.",
-    "month": "march",
-    "year": "2018"
+    "month": "March",
+    "year": "2018",
+    "author": "Peppermint Pat",
+    "authorImg": "/img/Peppermint_Patty.png"
   },
   {
     "id": 2,
@@ -31,7 +33,9 @@
     ],
     "titel": "–– colorful patters at Paris Deco Off",
     "caption": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.",
-    "month": "january",
-    "year": "2019"
+    "month": "January",
+    "year": "2019",
+    "author": "Franklin",
+    "authorImg": "/img/Franklin.png"
   }
 ]
