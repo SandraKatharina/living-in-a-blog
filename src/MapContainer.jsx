@@ -17,24 +17,20 @@ import ControlPanel from "./ControlPanel";
 function MapContainer({ destinations }) {
   const [popupInfo, setPopupInfo] = useState(null);
 
-  const pins = useMemo(
-    () =>
-      destinations.map((destination) => (
-        <Marker
-          key={`marker-${destination.id}`}
-          longitude={destination.longitude}
-          latitude={destination.latitude}
-          anchor="bottom"
-          onClick={(e) => {
-            // If we let the click event propagates to the map, it will immediately close the popup
-            // with `closeOnClick: true`
-            e.originalEvent.stopPropagation();
-            setPopupInfo(destination);
-          }}
-        ></Marker>
-      )),
-    []
-  );
+  const pins = destinations.map((destination) => (
+    <Marker
+      key={destination.id}
+      longitude={destination.longitude}
+      latitude={destination.latitude}
+      anchor="bottom"
+      onClick={(e) => {
+        // If we let the click event propagates to the map, it will immediately close the popup
+        // with `closeOnClick: true`
+        e.originalEvent.stopPropagation();
+        setPopupInfo(destination);
+      }}
+    ></Marker>
+  ));
 
   return (
     <div>
