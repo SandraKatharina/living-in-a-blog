@@ -22,7 +22,8 @@ function MapContainer({ destinations }) {
       key={destination.id}
       longitude={destination.longitude}
       latitude={destination.latitude}
-      anchor="bottom"
+      anchor=""
+      color="red"
       onClick={(e) => {
         // If we let the click event propagates to the map, it will immediately close the popup
         // with `closeOnClick: true`
@@ -80,14 +81,6 @@ function MapContainer({ destinations }) {
             </div>
           </Popup>
         )}
-
-        {/* <Marker
-          key={destinations.id}
-          longitude={destinations.longitude}
-          latitude={destinations.latitude}
-          color="red"
-        /> */}
-        {/* <Marker longitude={9.993682} latitude={53.551086} color="red" /> */}
       </Map>
       <ControlPanel />
     </div>
