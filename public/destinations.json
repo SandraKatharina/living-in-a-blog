@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "target": "/marrakech",
     "city": "Marrakech",
     "country": "Marocco",
     "latitude": 31.628674,
@@ -21,6 +22,7 @@
   },
   {
     "id": 2,
+    "target": "/paris",
     "city": "Paris",
     "country": "France",
     "latitude": 48.864716,

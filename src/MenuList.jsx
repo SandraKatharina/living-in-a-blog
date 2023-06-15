@@ -1,10 +1,12 @@
+import { Link } from "wouter";
+
 function MenuList({ menuList }) {
   return (
-    <div className="absolut z-150 top-10 grid w-screen grid-flow-row grid-cols-3 gap-2 bg-water px-8 text-midnight">
+    <div className="absolut top-10 -mt-5 flex w-screen flex-row justify-between bg-water px-4 text-sm text-white">
       {menuList.map((item) => (
-        <div className="cursor-pointer hover:text-landscape" key={item.id}>
-          <h2>{item.caption}</h2>
-        </div>
+        <Link key={item.id} href={item.target}>
+          <h2 className="cursor-pointer hover:text-midnight">{item.caption}</h2>
+        </Link>
       ))}
     </div>
   );

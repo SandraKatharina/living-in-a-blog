@@ -1,21 +1,18 @@
-import { Link } from "wouter";
-
-function DestinationCard({ destinations }) {
+function DestinationDetail({ destinations }) {
   return (
     <>
-      {destinations.map((destination) => (
+      <div>hello destination</div>
+      {/* {destinations.map((destination) => (
         <div
           className="m-8 w-2/3 flex-none rounded-lg bg-white md:w-1/3 md:pb-4"
           key={destination.id}
         >
-          <div className="aspect-w-16 aspect-h-9">
-            <Link href={destination.target}>
-              <img
-                className="h-52 w-full object-none hover:object-scale-down"
-                src={destination.imageSrc}
-                alt=""
-              />
-            </Link>
+          <div className="">
+            <img
+              className="h-52 w-full object-none"
+              src={destination.imageSrc}
+              alt=""
+            />
           </div>
           <div className="px-4 pb-2">
             <div className="space-y-1 text-lg font-medium leading-6">
@@ -41,8 +38,9 @@ function DestinationCard({ destinations }) {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
     </>
   );
 }
-export default DestinationCard;
+
+export default DestinationDetail;

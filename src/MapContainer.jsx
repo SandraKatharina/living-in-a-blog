@@ -11,7 +11,7 @@ import Map, {
   GeolocateControl,
 } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import Pin from "./Pin";
+
 import ControlPanel from "./ControlPanel";
 
 function MapContainer({ destinations }) {
@@ -31,9 +31,7 @@ function MapContainer({ destinations }) {
             e.originalEvent.stopPropagation();
             setPopupInfo(destination);
           }}
-        >
-          <Pin />
-        </Marker>
+        ></Marker>
       )),
     []
   );
@@ -51,6 +49,7 @@ function MapContainer({ destinations }) {
         style={{ height: 380 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
+        scrollZoom={false}
       >
         <GeolocateControl position="top-left" />
         <FullscreenControl position="top-left" />
