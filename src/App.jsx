@@ -14,10 +14,12 @@ function App() {
   }, []);
 
   return (
-    <main className="relativ h-full w-full bg-gradient-to-b from-water from-20% to-desert to-60%">
+    <main className="relativ z-0 h-full w-full bg-gradient-to-b from-water from-20% to-desert to-60%">
       <HeaderBar />
-      <MapContainer destinations={destinations} />
-      <MainContent destinations={destinations} />
+      <div className="overflow-y-scroll">
+        <MapContainer destinations={destinations} />
+        <MainContent destinations={destinations} />
+      </div>
       <FooterBar />
     </main>
   );

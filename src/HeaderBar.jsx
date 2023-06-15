@@ -14,7 +14,7 @@ function HeaderBar() {
 
   return (
     <>
-      <header className="">
+      <header className="fixed top-0 z-20 w-screen">
         <div className="flex h-28 w-full flex-row items-center justify-around bg-transparent">
           <button className="h-20 w-20 text-midnight hover:text-landscape">
             <img src={"/sLogo-indigo-700.svg"} />

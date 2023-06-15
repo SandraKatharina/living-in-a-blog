@@ -23,7 +23,7 @@ function MapContainer({ destinations }) {
       longitude={destination.longitude}
       latitude={destination.latitude}
       anchor=""
-      color="red"
+      color="fuchsia"
       onClick={(e) => {
         // If we let the click event propagates to the map, it will immediately close the popup
         // with `closeOnClick: true`
@@ -34,7 +34,7 @@ function MapContainer({ destinations }) {
   ));
 
   return (
-    <div>
+    <div className="z-10">
       <Map
         initialViewState={{
           longitude: 9.993682,
@@ -48,10 +48,10 @@ function MapContainer({ destinations }) {
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         scrollZoom={false}
       >
-        <GeolocateControl position="top-left" />
-        <FullscreenControl position="top-left" />
-        <NavigationControl position="top-left" />
         <ScaleControl />
+        <GeolocateControl position="bottom-left" />
+        <FullscreenControl position="bottom-left" />
+        <NavigationControl position="bottom-left" />
 
         {pins}
 

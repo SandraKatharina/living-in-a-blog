@@ -2,6 +2,7 @@ import { Route } from "wouter";
 import DestinationCard from "./DestinationCard";
 import AboutPage from "./AboutPage";
 import DestinationDetail from "./DestinationDetail";
+import NewDestinationForm from "./NewDestinationForm";
 
 function MainContent({ destinations }) {
   return (
@@ -27,54 +28,7 @@ function MainContent({ destinations }) {
         <AboutPage />
       </Route>
       <Route path="/newpost">
-        <form className="">
-          <h1>Add a new destination</h1>
-          <input
-            type="text"
-            placeholder="Image Source"
-            id="imageInput"
-            class="inputField"
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="City"
-            id="inputCity"
-            class="inputField"
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="Title"
-            id="inputTitle"
-            class="inputField"
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="Description"
-            id="inputDescription"
-            class="inputField"
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="Country"
-            id="inputCountry"
-            class="inputField"
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="Date"
-            id="inputDate"
-            class="inputField"
-          />
-          <br />
-          <button type="button" inputType="reset" id="addButton" class="button">
-            ADD DESTINATION
-          </button>
-        </form>
+        <NewDestinationForm />
       </Route>
       <Route path="/contact">Contact Page</Route>
       <Route path={destinations.target}>
