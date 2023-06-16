@@ -39,7 +39,7 @@ function MapContainer({ destinations }) {
         initialViewState={{
           longitude: 9.993682,
           latitude: 53.551086,
-          zoom: 2,
+          zoom: 0,
           bearing: 0,
           pitch: 0,
         }}
@@ -48,7 +48,6 @@ function MapContainer({ destinations }) {
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         scrollZoom={false}
       >
-        <ScaleControl />
         <GeolocateControl position="bottom-left" />
         <FullscreenControl position="bottom-left" />
         <NavigationControl position="bottom-left" />

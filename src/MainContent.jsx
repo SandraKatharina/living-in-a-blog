@@ -7,7 +7,7 @@ import NewDestinationForm from "./NewDestinationForm";
 function MainContent({ destinations }) {
   return (
     <div>
-      <Route path={"/home"}>
+      <Route path="/home">
         <div className="flex-no-wrap scrolling-touch mb-8 flex items-start overflow-x-scroll bg-desert">
           <DestinationCard destinations={destinations} />
         </div>

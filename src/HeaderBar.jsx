@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import MenuList from "./MenuList";
+import { Link } from "wouter";
 
 function HeaderBar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,9 +17,11 @@ function HeaderBar() {
     <>
       <header className="fixed top-0 z-20 w-screen">
         <div className="flex h-28 w-full flex-row items-center justify-around bg-transparent">
-          <button className="h-20 w-20 text-midnight hover:text-landscape">
-            <img src={"/sLogo-indigo-700.svg"} />
-          </button>
+          <Link href="/home">
+            <button className="h-20 w-20 text-midnight hover:text-landscape">
+              <img src={"/sLogo-indigo-700.svg"} />
+            </button>
+          </Link>
           <span className="flex h-20 w-20 items-center justify-center text-center text-midnight ">
             LIVING IN A BLOG
           </span>
