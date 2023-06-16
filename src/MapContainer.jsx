@@ -13,6 +13,7 @@ import Map, {
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import ControlPanel from "./ControlPanel";
+import { Link } from "wouter";
 
 function MapContainer({ destinations }) {
   const [popupInfo, setPopupInfo] = useState(null);
@@ -34,7 +35,7 @@ function MapContainer({ destinations }) {
   ));
 
   return (
-    <div className="z-10">
+    <>
       <Map
         initialViewState={{
           longitude: 9.993682,
@@ -48,6 +49,7 @@ function MapContainer({ destinations }) {
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         scrollZoom={false}
       >
+        <ScaleControl />
         <GeolocateControl position="bottom-left" />
         <FullscreenControl position="bottom-left" />
         <NavigationControl position="bottom-left" />
@@ -61,18 +63,18 @@ function MapContainer({ destinations }) {
             latitude={Number(popupInfo.latitude)}
             onClose={() => setPopupInfo(null)}
           >
-            <div>
+            <div className="w-36">
               {popupInfo.city}, {popupInfo.country} |{" "}
-              <a
+              <Link
                 target="_new"
-                href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.country}`}
-                className="text-bold text-midnight hover:text-landscape"
+                href={popupInfo.target}
+                className="text-[9px] font-bold text-midnight hover:text-landscape"
               >
-                read more …
-              </a>
+                READ MORE
+              </Link>
             </div>
             <img
-              className="h-40 w-full object-cover"
+              className="h-24 w-full object-cover"
               src={popupInfo.imageSrc}
             />
             <div>
@@ -82,7 +84,7 @@ function MapContainer({ destinations }) {
         )}
       </Map>
       <ControlPanel />
-    </div>
+    </>
   );
 }
 

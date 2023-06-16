@@ -1,6 +1,6 @@
 function AboutPage() {
   return (
-    <div className="bg-desert px-3">
+    <div className="px-3">
       <section className="p-4">
         <h1 className="text-2xl">About––</h1>
         <h2 className="">

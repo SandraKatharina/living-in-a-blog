@@ -1,28 +1,21 @@
 import { Route } from "wouter";
 import DestinationCard from "./DestinationCard";
 import AboutPage from "./AboutPage";
-import DestinationDetail from "./DestinationDetail";
 import NewDestinationForm from "./NewDestinationForm";
+import DestinationDetail from "./DestinationDetail";
+import LoginForm from "./LoginForm";
+import ContactPage from "./ContactPage";
 
 function MainContent({ destinations }) {
   return (
-    <div>
+    <div className="md:pt-28">
       <Route path="/home">
-        <div className="flex-no-wrap scrolling-touch mb-8 flex items-start overflow-x-scroll bg-desert">
+        <div className="flex-no-wrap scrolling-touch mb-8 flex items-start overflow-x-scroll md:flex-col md:overflow-y-scroll">
           <DestinationCard destinations={destinations} />
         </div>
       </Route>
       <Route path="/login">
-        <input
-          name="author"
-          placeholder="YOUR NAME"
-          className="w-40 rounded-md bg-white"
-        ></input>
-        <input
-          name="password"
-          placeholder="YOUR PASSWORD"
-          className="w-40 rounded-md bg-white"
-        ></input>
+        <LoginForm />
       </Route>
       <Route path="/about">
         <AboutPage />
@@ -30,9 +23,16 @@ function MainContent({ destinations }) {
       <Route path="/newpost">
         <NewDestinationForm />
       </Route>
-      <Route path="/contact">Contact Page</Route>
+      <Route path="/contact">
+        <ContactPage />
+      </Route>
+
       <Route path={destinations.target}>
-        <DestinationDetail destinations={destinations} />
+        {destinations.map((destination) => (
+          <div key={destination.id} className="h-10 w-10">
+            hello {destination.city}
+          </div>
+        ))}
       </Route>
     </div>
   );

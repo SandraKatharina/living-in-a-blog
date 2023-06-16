@@ -6,22 +6,22 @@
   },
   {
     "id": 2,
-    "target": "/login",
-    "caption": "LOGIN"
-  },
-  {
-    "id": 3,
     "target": "/about",
     "caption": "ABOUT"
   },
   {
-    "id": 4,
+    "id": 3,
     "target": "/contact",
     "caption": "CONTACT"
   },
   {
-    "id": 5,
+    "id": 4,
     "target": "/newpost",
     "caption": "NEW POST"
+  },
+  {
+    "id": 5,
+    "target": "/login",
+    "caption": "LOGIN"
   }
 ]
