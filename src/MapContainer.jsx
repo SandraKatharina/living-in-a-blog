@@ -1,38 +1,19 @@
 import * as React from "react";
-import { useState, useMemo } from "react";
-import { render } from "react-dom";
+import { useState } from "react";
 
 import Map, {
   Marker,
   Popup,
   NavigationControl,
   FullscreenControl,
-  ScaleControl,
-  GeolocateControl,
 } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import ControlPanel from "./ControlPanel";
 import { Link } from "wouter";
 
-function MapContainer({ destinations }) {
+function MapContainer({ destinations, mapRef }) {
   const [popupInfo, setPopupInfo] = useState(null);
-
-  const pins = destinations.map((destination) => (
-    <Marker
-      key={destination.id}
-      longitude={destination.longitude}
-      latitude={destination.latitude}
-      anchor=""
-      color="fuchsia"
-      onClick={(e) => {
-        // If we let the click event propagates to the map, it will immediately close the popup
-        // with `closeOnClick: true`
-        e.originalEvent.stopPropagation();
-        setPopupInfo(destination);
-      }}
-    ></Marker>
-  ));
 
   return (
     <>
@@ -44,21 +25,37 @@ function MapContainer({ destinations }) {
           bearing: 0,
           pitch: 0,
         }}
-        style={{ height: 380 }}
+        ref={mapRef}
+        className="h-1/2 md:h-full"
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         scrollZoom={false}
       >
-        <ScaleControl />
-        <GeolocateControl position="bottom-left" />
-        <FullscreenControl position="bottom-left" />
         <NavigationControl position="bottom-left" />
 
-        {pins}
+        {destinations.map((destination) => (
+          <Marker
+            key={destination.id}
+            longitude={destination.longitude}
+            latitude={destination.latitude}
+            anchor=""
+            color="fuchsia"
+            onClick={(e) => {
+              // If we let the click event propagates to the map, it will immediately close the popup
+              // with `closeOnClick: true`
+              e.originalEvent.stopPropagation();
+              // setPopupInfo(destination);
+              mapRef.current.easeTo({
+                center: [destination.longitude, destination.latitude],
+                zoom: 10,
+              });
+            }}
+          ></Marker>
+        ))}
 
         {popupInfo && (
           <Popup
-            anchor="top"
+            anchor={undefined}
             longitude={Number(popupInfo.longitude)}
             latitude={Number(popupInfo.latitude)}
             onClose={() => setPopupInfo(null)}

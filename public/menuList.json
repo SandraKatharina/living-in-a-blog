@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "target": "/home",
+    "target": "/",
     "caption": "HOME"
   },
   {
@@ -18,10 +18,5 @@
     "id": 4,
     "target": "/newpost",
     "caption": "NEW POST"
-  },
-  {
-    "id": 5,
-    "target": "/login",
-    "caption": "LOGIN"
   }
 ]

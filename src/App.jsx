@@ -1,8 +1,11 @@
 import HeaderBar from "./HeaderBar";
 import FooterBar from "./FooterBar";
-import MainContent from "./MainContent";
+
 import MapContainer from "./MapContainer";
-import { useEffect, useState } from "react";
+import DestinationCard from "./DestinationCard";
+import DestinationDetail from "./DestinationDetail";
+import { useEffect, useState, useRef } from "react";
+import { Route } from "wouter";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -13,15 +16,48 @@ function App() {
       .then((destinations) => setDestinations(destinations));
   }, []);
 
+  const mapRef = useRef();
+
   return (
-    <main className="relativ z-0 h-full w-screen bg-gradient-to-b from-water from-20% to-desert to-60%">
+    <main className="z-0 h-full w-screen bg-gradient-to-b from-water from-10% to-desert to-45%">
       <HeaderBar />
-      <div className="flex flex-col md:flex-row-reverse">
-        <div className="z-10 md:h-20 md:w-1/2">
-          <MapContainer destinations={destinations} />
+      <div className="flex h-[calc(100vh-32px)] flex-col md:flex-row-reverse">
+        <div className="z-10 h-1/2 w-full md:h-full md:w-1/2">
+          <MapContainer mapRef={mapRef} destinations={destinations} />
         </div>
-        <div className="md:w-1/2">
-          <MainContent destinations={destinations} />
+        <div className="h-1/2 w-full md:h-full md:w-1/2">
+          <Route path="/">
+            <div className="flex-no-wrap scrolling-touch mb-8 flex h-[calc(50vh-32px)] items-start overflow-x-scroll md:mb-0 md:mt-12 md:h-[calc(100vh-32px)] md:flex-col md:items-center md:overflow-y-scroll">
+              {destinations.map((destination) => (
+                <DestinationCard
+                  destination={destination}
+                  key={destination.id}
+                />
+              ))}
+            </div>
+          </Route>
+
+          <Route path="/destination/:id">
+            {(params) => {
+              const foundLocation = destinations.find(
+                (destination) => Number(params.id) === destination.id
+              );
+
+              mapRef.current.easeTo({
+                center: [foundLocation.longitude, foundLocation.latitude],
+                zoom: 6,
+              });
+
+              return foundLocation ? (
+                <DestinationDetail
+                  destination={foundLocation}
+                  key={foundLocation.id}
+                ></DestinationDetail>
+              ) : (
+                <Redirect to="/" />
+              );
+            }}
+          </Route>
         </div>
       </div>
       <FooterBar />

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import MenuList from "./MenuList";
 import { Link } from "wouter";
+import LoginForm from "./LoginForm";
 
 function HeaderBar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,28 +16,33 @@ function HeaderBar() {
 
   return (
     <>
-      <header className="fixed top-0 z-20 w-screen">
-        <div className="flex h-28 w-full flex-row items-center justify-around bg-transparent">
-          <Link href="/home">
-            <button className="h-20 w-20 text-midnight hover:text-landscape">
+      <header className="fixed z-20 bg-water">
+        <div className="h-18 inline-flex w-screen items-center justify-around py-2">
+          <Link href="/">
+            <button className="h-16 w-16 text-midnight hover:text-landscape">
               <img src={"/sLogo-indigo-700.svg"} />
             </button>
           </Link>
-          <span className="flex h-20 w-20 items-center justify-center text-center text-midnight ">
-            LIVING IN A BLOG
+          <span className="text-md inline-flex h-16 w-16 items-center justify-center text-center uppercase text-midnight md:w-48 md:text-xl ">
+            living in a blog
           </span>
           <button
             onClick={() => setShowMenu((prev) => !prev)}
-            className="relative h-20 w-20 text-white hover:text-landscape"
+            className="h-16 w-16 text-white hover:text-landscape"
           >
             {!showMenu ? (
-              <FiMenu className="h-20 w-20" />
+              <FiMenu className="h-16 w-16" />
             ) : (
-              <FiX className="h-20 w-20" />
+              <FiX className="h-16 w-16" />
             )}
           </button>
         </div>
-        <div>{showMenu && <MenuList menuList={menuList} />}</div>
+        <div className="fixed right-0 w-1/2">
+          <ul>{showMenu && <MenuList menuList={menuList} />}</ul>
+        </div>
+        <div className="hidden sm:hidden lg:visible">
+          <LoginForm />
+        </div>
       </header>
     </>
   );
