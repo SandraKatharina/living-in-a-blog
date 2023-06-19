@@ -9,7 +9,6 @@ import Map, {
 } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-import ControlPanel from "./ControlPanel";
 import { Link } from "wouter";
 
 function MapContainer({ destinations, mapRef }) {
@@ -80,7 +79,6 @@ function MapContainer({ destinations, mapRef }) {
           </Popup>
         )}
       </Map>
-      <ControlPanel />
     </>
   );
 }
