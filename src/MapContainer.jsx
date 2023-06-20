@@ -19,7 +19,7 @@ function MapContainer({ destinations, mapRef }) {
       <Map
         initialViewState={{
           longitude: 9.993682,
-          latitude: 53.551086,
+          latitude: 9.993682,
           zoom: 0,
           bearing: 0,
           pitch: 0,
@@ -43,10 +43,10 @@ function MapContainer({ destinations, mapRef }) {
               // If we let the click event propagates to the map, it will immediately close the popup
               // with `closeOnClick: true`
               e.originalEvent.stopPropagation();
-              // setPopupInfo(destination);
+              setPopupInfo(destination);
               mapRef.current.easeTo({
                 center: [destination.longitude, destination.latitude],
-                zoom: 10,
+                zoom: 7,
               });
             }}
           ></Marker>
@@ -63,7 +63,7 @@ function MapContainer({ destinations, mapRef }) {
               {popupInfo.city}, {popupInfo.country} |{" "}
               <Link
                 target="_new"
-                href={popupInfo.target}
+                href={popupInfo.id}
                 className="text-[9px] font-bold text-midnight hover:text-landscape"
               >
                 READ MORE

@@ -4,7 +4,7 @@ function DestinationCard({ destination }) {
   return (
     <>
       <div
-        className="m-4 h-[89%] w-2/3 flex-none rounded-lg bg-white sm:h-1/3 md:m-8 lg:h-1/2"
+        className="m-4 h-[89%] w-2/3 flex-none rounded-lg bg-white sm:h-[85%] md:m-8 lg:h-1/2"
         key={destination.id}
       >
         <Link key={destination.id} href={"/destination/" + destination.id}>

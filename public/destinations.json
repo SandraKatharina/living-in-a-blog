@@ -1,7 +1,6 @@
 [
   {
     "id": 1,
-    "target": "/marrakech",
     "city": "Marrakech",
     "country": "Marocco",
     "latitude": 31.628674,
@@ -22,7 +21,6 @@
   },
   {
     "id": 2,
-    "target": "/paris",
     "city": "Paris",
     "country": "France",
     "latitude": 48.864716,
@@ -42,7 +40,6 @@
   },
   {
     "id": 3,
-    "target": "/chiangmai",
     "city": "Chiang Mai",
     "country": "Thailand",
     "latitude": 18.796143,
@@ -62,7 +59,6 @@
   },
   {
     "id": 4,
-    "target": "/paris",
     "city": "Paris",
     "country": "France",
     "latitude": 48.864716,
@@ -82,7 +78,6 @@
   },
   {
     "id": 5,
-    "target": "/frankfurt",
     "city": "Frankfurt",
     "country": "Germany",
     "latitude": 50.110924,
@@ -102,7 +97,6 @@
   },
   {
     "id": 6,
-    "target": "/paris",
     "city": "Paris",
     "country": "France",
     "latitude": 48.864716,

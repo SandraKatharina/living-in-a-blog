@@ -4,7 +4,7 @@ import MenuList from "./MenuList";
 import { Link } from "wouter";
 import LoginForm from "./LoginForm";
 
-function HeaderBar() {
+function HeaderBar({ mapRef }) {
   const [showMenu, setShowMenu] = useState(false);
   const [menuList, setMenuList] = useState([]);
 
@@ -20,7 +20,15 @@ function HeaderBar() {
         <div className="h-18 inline-flex w-screen items-center justify-around py-2">
           <Link href="/">
             <button className="h-16 w-16 text-midnight hover:text-landscape">
-              <img src={"/sLogo-indigo-700.svg"} />
+              <img
+                src={"/sLogo-indigo-700.svg"}
+                onClick={(e) => {
+                  mapRef.current.easeTo({
+                    center: [9.993682, 9.993682],
+                    zoom: 0,
+                  });
+                }}
+              />
             </button>
           </Link>
           <span className="text-md inline-flex h-16 w-16 items-center justify-center text-center uppercase text-midnight md:w-48 md:text-xl ">
