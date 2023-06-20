@@ -6,6 +6,7 @@ import DestinationCard from "./DestinationCard";
 import DestinationDetail from "./DestinationDetail";
 import { useEffect, useState, useRef } from "react";
 import { Route, Redirect } from "wouter";
+import AboutPage from "./AboutPage";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -44,11 +45,6 @@ function App() {
                 (destination) => Number(params.id) === destination.id
               );
 
-              // mapRef.current.easeTo({
-              //   center: [foundLocation.longitude, foundLocation.latitude],
-              //   zoom: 10,
-              // });
-
               return foundLocation ? (
                 <DestinationDetail
                   destination={foundLocation}
@@ -59,6 +55,9 @@ function App() {
                 <Redirect to="/" />
               );
             }}
+          </Route>
+          <Route path="/about">
+            <AboutPage destination={destinations} mapRef={mapRef} />
           </Route>
         </div>
       </div>
