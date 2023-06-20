@@ -5,7 +5,7 @@ import MapContainer from "./MapContainer";
 import DestinationCard from "./DestinationCard";
 import DestinationDetail from "./DestinationDetail";
 import { useEffect, useState, useRef } from "react";
-import { Route } from "wouter";
+import { Route, Redirect } from "wouter";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -31,6 +31,7 @@ function App() {
               {destinations.map((destination) => (
                 <DestinationCard
                   destination={destination}
+                  mapRef={mapRef}
                   key={destination.id}
                 />
               ))}
@@ -51,6 +52,7 @@ function App() {
               return foundLocation ? (
                 <DestinationDetail
                   destination={foundLocation}
+                  mapRef={mapRef}
                   key={foundLocation.id}
                 ></DestinationDetail>
               ) : (

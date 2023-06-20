@@ -59,20 +59,25 @@ function MapContainer({ destinations, mapRef }) {
             latitude={Number(popupInfo.latitude)}
             onClose={() => setPopupInfo(null)}
           >
-            <div className="w-36">
+            <div className="">
               {popupInfo.city}, {popupInfo.country} |{" "}
               <Link
                 target="_new"
-                href={popupInfo.id}
+                href={"/destination/" + popupInfo.id}
                 className="text-[9px] font-bold text-midnight hover:text-landscape"
               >
                 READ MORE
               </Link>
             </div>
-            <img
-              className="h-24 w-full object-cover"
-              src={popupInfo.imageSrc}
-            />
+            <Link
+              href={"/destination/" + popupInfo.id}
+              className="cursor-pointer"
+            >
+              <img
+                className="h-24 w-full object-cover"
+                src={popupInfo.imageSrc}
+              />
+            </Link>
             <div>
               {popupInfo.month} {popupInfo.year}
             </div>

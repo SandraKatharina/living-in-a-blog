@@ -1,10 +1,24 @@
-function DestinationDetail({ destination }) {
+import { FiArrowLeft } from "react-icons/fi";
+import { Link } from "wouter";
+
+function DestinationDetail({ destination, mapRef }) {
   return (
     <div className="h-full overflow-scroll sm:pt-20">
-      <h1 className="m-4 border-y border-black p-2 text-center text-xl uppercase">
+      <Link
+        href="/"
+        onClick={(e) => {
+          mapRef.current.easeTo({
+            center: [destination.longitude, destination.latitude],
+            zoom: 0,
+          });
+        }}
+      >
+        <FiArrowLeft className="fixed mt-4 h-12 w-12 cursor-pointer text-midnight hover:text-water md:hover:text-landscape" />
+      </Link>
+      <h1 className="mx-12 my-4 border-y border-black p-2 text-center text-xl uppercase">
         {destination.city}
       </h1>
-      <div className="px-11">
+      <div className="px-12">
         <img src={destination.imageSrc} alt="" className="" />
       </div>
       <h2 className="mx-12  text-left text-2xl">{destination.titel}</h2>
