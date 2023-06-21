@@ -28,9 +28,9 @@ function MapContainer({ destinations, mapRef }) {
         className="h-1/2 md:h-full"
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
-        scrollZoom={false}
+        // scrollZoom={false}
       >
-        <NavigationControl position="bottom-left" />
+        <NavigationControl position="bottom-left" showCompass={false} />
 
         {destinations.map((destination) => (
           <Marker
@@ -69,12 +69,9 @@ function MapContainer({ destinations, mapRef }) {
                 READ MORE
               </Link>
             </div>
-            <Link
-              href={"/destination/" + popupInfo.id}
-              className="cursor-pointer"
-            >
+            <Link href={"/destination/" + popupInfo.id} className="">
               <img
-                className="h-24 w-full object-cover"
+                className="h-24 w-full cursor-pointer object-cover hover:object-none"
                 src={popupInfo.imageSrc}
               />
             </Link>

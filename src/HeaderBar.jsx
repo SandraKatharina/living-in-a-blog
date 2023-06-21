@@ -4,7 +4,7 @@ import MenuList from "./MenuList";
 import { Link } from "wouter";
 import LoginForm from "./LoginForm";
 
-function HeaderBar({ mapRef }) {
+function HeaderBar({ mapRef, destinations }) {
   const [showMenu, setShowMenu] = useState(false);
   const [menuList, setMenuList] = useState([]);
 
@@ -46,7 +46,9 @@ function HeaderBar({ mapRef }) {
           </button>
         </div>
         <div className="fixed right-0 w-1/2">
-          <ul>{showMenu && <MenuList menuList={menuList} />}</ul>
+          <ul>
+            {showMenu && <MenuList menuList={menuList} mapRef={mapRef} />}
+          </ul>
         </div>
         <div className="hidden sm:hidden lg:visible">
           <LoginForm />

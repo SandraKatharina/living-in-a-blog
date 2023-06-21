@@ -21,7 +21,7 @@ function App() {
 
   return (
     <main className="z-0 h-full w-screen bg-gradient-to-b from-water from-20% to-desert to-45%">
-      <HeaderBar mapRef={mapRef} />
+      <HeaderBar mapRef={mapRef} destinations={destinations} />
       <div className="flex h-[calc(100vh-32px)] flex-col sm:flex-row-reverse">
         <div className="z-10 h-1/2 w-full pt-20 sm:h-full sm:w-1/2">
           <MapContainer mapRef={mapRef} destinations={destinations} />
@@ -57,7 +57,7 @@ function App() {
             }}
           </Route>
           <Route path="/about">
-            <AboutPage destination={destinations} mapRef={mapRef} />
+            <AboutPage />
           </Route>
         </div>
       </div>

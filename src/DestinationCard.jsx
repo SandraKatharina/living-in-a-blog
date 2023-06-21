@@ -18,7 +18,7 @@ function DestinationCard({ destination, mapRef }) {
           }}
         >
           <img
-            className="h-1/2 w-full cursor-pointer object-cover hover:shadow-xl md:h-1/2"
+            className="h-1/2 w-full cursor-pointer object-cover hover:object-none md:h-1/2"
             src={destination.imageSrc}
             alt=""
           />
@@ -32,7 +32,16 @@ function DestinationCard({ destination, mapRef }) {
           </div>
           <div className="text-xs md:text-sm">
             <p className="line-clamp-2">{destination.caption}</p>
-            <Link key={destination.id} href={"/destination/" + destination.id}>
+            <Link
+              key={destination.id}
+              href={"/destination/" + destination.id}
+              onClick={(e) => {
+                mapRef.current.easeTo({
+                  center: [destination.longitude, destination.latitude],
+                  zoom: 7,
+                });
+              }}
+            >
               <p className="mt-2 cursor-pointer text-right text-xs font-bold text-midnight hover:text-landscape">
                 READ MORE
               </p>
