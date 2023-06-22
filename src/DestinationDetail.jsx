@@ -1,4 +1,3 @@
-import { FiArrowLeft } from "react-icons/fi";
 import { Link } from "wouter";
 import LinkArrowBackToHome from "./LinkArrowBackToHome";
 
@@ -31,17 +30,19 @@ function DestinationDetail({ destination, mapRef }) {
         <div className="">
           {destination.month} {destination.year}
         </div>
-        <div className="flex flex-row-reverse justify-start border-t border-black p-2">
-          <div className="rounded-full bg-white ">
-            <img
-              className="m-1 h-12 w-12 object-cover object-top p-2 md:h-14 md:w-14 "
-              src={destination.authorImg}
-            />
+        <Link href="/about">
+          <div className="flex cursor-pointer flex-row-reverse justify-start border-t border-black p-2">
+            <div className="rounded-full bg-white ">
+              <img
+                className="m-1 h-12 w-12 rounded-full object-cover object-top p-2 hover:object-scale-down md:h-14 md:w-14 "
+                src={destination.authorImg}
+              />
+            </div>
+            <p className="text-md mx-2 line-clamp-1 flex items-center justify-center font-bold text-gray-800 hover:text-fuchsia-500 md:text-lg">
+              {destination.author}
+            </p>
           </div>
-          <p className="text-md mx-2 line-clamp-1 flex items-center justify-center font-bold text-gray-800 md:text-lg">
-            {destination.author}
-          </p>
-        </div>
+        </Link>
         <div>
           <img src={destination.detailImageSrc} alt="" />
         </div>

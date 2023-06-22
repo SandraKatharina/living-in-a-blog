@@ -9,6 +9,7 @@ import { Route, Redirect } from "wouter";
 import AboutPage from "./AboutPage";
 import AboutAuthorSection from "./AboutAuthorSection";
 import ContactPage from "./ContactPage";
+import NewPostForm from "./NewPostForm";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -78,6 +79,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <ContactPage mapRef={mapRef} />
+          </Route>
+          <Route path="/newpost">
+            <NewPostForm mapRef={mapRef} />
           </Route>
         </div>
       </div>

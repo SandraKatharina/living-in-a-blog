@@ -17,7 +17,7 @@ function LoginForm() {
       <button
         type="button"
         input-type="reset"
-        className="my-2 h-1/6 w-1/2 rounded-full bg-midnight p-1 text-xs uppercase text-desert drop-shadow-xl hover:bg-fuchsia-500 hover:drop-shadow-md sm:w-1/3"
+        className="my-2 h-1/6 w-1/2 rounded-full bg-midnight p-1 text-xs uppercase text-desert hover:bg-fuchsia-500 sm:w-1/3"
       >
         login
       </button>

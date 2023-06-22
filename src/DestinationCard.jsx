@@ -50,15 +50,17 @@ function DestinationCard({ destination, mapRef }) {
             {/* author card  */}
 
             <div className="my-1 flex flex-row justify-between border-t border-black">
-              <div className="flex flex-row justify-around">
-                <img
-                  className="m-1 h-10 w-10 rounded-full bg-white object-cover object-top p-2 sm:h-12 sm:w-12 md:h-14 md:w-14"
-                  src={destination.authorImg}
-                />
-                <p className="text-md line-clamp-1 flex items-center justify-center font-bold text-gray-800 md:text-lg">
-                  {destination.author}
-                </p>
-              </div>
+              <Link href="/about">
+                <div className="flex cursor-pointer flex-row justify-around">
+                  <img
+                    className="m-1 h-10 w-10 rounded-full bg-white  object-cover object-top p-2 hover:object-scale-down sm:h-12 sm:w-12 md:h-14 md:w-14"
+                    src={destination.authorImg}
+                  />
+                  <p className="text-md line-clamp-1 flex items-center justify-center font-bold text-gray-800 hover:text-fuchsia-500 md:text-lg">
+                    {destination.author}
+                  </p>
+                </div>
+              </Link>
               <div className="flex flex-col justify-center text-right">
                 <div className="font-bold uppercase text-midnight">
                   {destination.country},{" "}
