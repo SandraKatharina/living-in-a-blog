@@ -8,6 +8,7 @@ import { useEffect, useState, useRef } from "react";
 import { Route, Redirect } from "wouter";
 import AboutPage from "./AboutPage";
 import AboutAuthorSection from "./AboutAuthorSection";
+import ContactPage from "./ContactPage";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -65,7 +66,7 @@ function App() {
           <Route path="/about">
             <div className="h-full overflow-scroll md:pt-20">
               <div>
-                <AboutPage />
+                <AboutPage mapRef={mapRef} />
               </div>
               {destinations.map((destination) => (
                 <AboutAuthorSection
@@ -74,6 +75,9 @@ function App() {
                 />
               ))}
             </div>
+          </Route>
+          <Route path="/contact">
+            <ContactPage mapRef={mapRef} />
           </Route>
         </div>
       </div>

@@ -1,20 +1,11 @@
 import { FiArrowLeft } from "react-icons/fi";
 import { Link } from "wouter";
+import LinkArrowBackToHome from "./LinkArrowBackToHome";
 
 function DestinationDetail({ destination, mapRef }) {
   return (
     <div className="h-full overflow-scroll sm:pt-20">
-      <Link
-        href="/"
-        onClick={(e) => {
-          mapRef.current.easeTo({
-            center: [destination.longitude, destination.latitude],
-            zoom: 0,
-          });
-        }}
-      >
-        <FiArrowLeft className="fixed mt-4 h-12 w-12 cursor-pointer text-midnight hover:text-water md:hover:text-landscape" />
-      </Link>
+      <LinkArrowBackToHome mapRef={mapRef} />
       <h1 className="mx-12 my-4 border-y border-black p-2 text-center text-xl uppercase">
         {destination.city}
       </h1>
@@ -23,6 +14,13 @@ function DestinationDetail({ destination, mapRef }) {
       </div>
       <h2 className="mx-12  text-left text-2xl">{destination.titel}</h2>
       <p className="m-2 px-14">{destination.caption}</p>
+      <div className="mx-12 flex flex-wrap">
+        {destination.detailImageSrc.map((detailImg) => (
+          <div className="h-1/2 w-1/2 p-2">
+            <img className="" src={detailImg} />
+          </div>
+        ))}
+      </div>
 
       {/* author card  */}
 

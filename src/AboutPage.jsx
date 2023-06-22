@@ -1,9 +1,9 @@
 import LinkArrowBackToHome from "./LinkArrowBackToHome";
 
-function AboutPage() {
+function AboutPage({ mapRef }) {
   return (
     <>
-      <LinkArrowBackToHome />
+      <LinkArrowBackToHome mapRef={mapRef} />
       <section className="mx-12 p-4">
         <h1 className="text-2xl">About––</h1>
         <h2 className="">
@@ -14,9 +14,9 @@ function AboutPage() {
         </h2>
       </section>
 
-      <p className="mx-12 mb-4 border-y border-black p-2 text-center uppercase">
+      <div className="mx-12 mb-4 border-y border-black p-2 text-center uppercase">
         meet the authors
-      </p>
+      </div>
     </>
   );
 }
