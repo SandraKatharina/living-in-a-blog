@@ -7,6 +7,7 @@ import DestinationDetail from "./DestinationDetail";
 import { useEffect, useState, useRef } from "react";
 import { Route, Redirect } from "wouter";
 import AboutPage from "./AboutPage";
+import AboutAuthorSection from "./AboutAuthorSection";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -14,7 +15,10 @@ function App() {
   useEffect(() => {
     fetch("/destinations.json")
       .then((data) => data.json())
-      .then((destinations) => setDestinations(destinations));
+      .then((destinations) => {
+        destinations.sort((a, b) => b.year - a.year);
+        setDestinations(destinations);
+      });
   }, []);
 
   const mapRef = useRef();
@@ -22,13 +26,14 @@ function App() {
   return (
     <main className="z-0 h-full w-screen bg-gradient-to-b from-water from-20% to-desert to-45%">
       <HeaderBar mapRef={mapRef} destinations={destinations} />
-      <div className="flex h-[calc(100vh-32px)] flex-col sm:flex-row-reverse">
-        <div className="z-10 h-1/2 w-full pt-20 sm:h-full sm:w-1/2">
+
+      <div className="flex h-[calc(100vh-32px)] flex-col md:flex-row-reverse">
+        <div className="z-10 h-1/2 w-full pt-20 md:h-full md:w-1/2">
           <MapContainer mapRef={mapRef} destinations={destinations} />
         </div>
-        <div className="h-1/2 w-full sm:h-full sm:w-1/2">
+        <div className="h-1/2 w-full md:h-full md:w-1/2">
           <Route path="/">
-            <div className="flex-no-wrap scrolling-touch mb-8 flex h-[calc(50vh-32px)] items-start overflow-x-scroll sm:mb-0 sm:mt-12 sm:h-[calc(100vh-32px)] sm:flex-col sm:items-center sm:overflow-y-scroll">
+            <div className="mb-8 flex h-[calc(50vh-32px)] items-start overflow-x-scroll md:mb-0 md:mt-12 md:h-[calc(100vh-32px)] md:flex-col md:items-center md:overflow-y-scroll">
               {destinations.map((destination) => (
                 <DestinationCard
                   destination={destination}
@@ -56,8 +61,19 @@ function App() {
               );
             }}
           </Route>
+
           <Route path="/about">
-            <AboutPage />
+            <div className="h-full overflow-scroll md:pt-20">
+              <div>
+                <AboutPage />
+              </div>
+              {destinations.map((destination) => (
+                <AboutAuthorSection
+                  destination={destination}
+                  key={destination.id}
+                />
+              ))}
+            </div>
           </Route>
         </div>
       </div>

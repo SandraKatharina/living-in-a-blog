@@ -17,7 +17,11 @@
     "month": "March",
     "year": "2018",
     "author": "Patty",
-    "authorImg": "/img/Peppermint_Patty.png"
+    "authorImg": "/img/Peppermint_Patty.png",
+    "authorTitle": "Patty–– upcycling virtuose and researcher",
+    "authorLocation": "Spain",
+    "authorSince": 2017,
+    "authorInfo": "Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit."
   },
   {
     "id": 2,
@@ -35,8 +39,12 @@
     "caption": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.",
     "month": "January",
     "year": "2019",
-    "author": "Franklin",
-    "authorImg": "/img/Franklin.png"
+    "author": "Sandra",
+    "authorImg": "/img/sandra-schollmeyer-artist-and-researcher.jpg",
+    "authorTitle": "Sandra–– weaver of color, textile sculptor and researcher",
+    "authorLocation": "Germany",
+    "authorSince": 2012,
+    "authorInfo": "Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit."
   },
   {
     "id": 3,
@@ -55,7 +63,11 @@
     "month": "November",
     "year": "2018",
     "author": "Snoopy",
-    "authorImg": "/img/Snoopy_Peanuts.png"
+    "authorImg": "/img/Snoopy_Peanuts.png",
+    "authorTitle": "Snoopy–– South East Asia specialist and writer",
+    "authorLocation": "Bangkok",
+    "authorSince": 2018,
+    "authorInfo": "Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit."
   },
   {
     "id": 4,
@@ -74,7 +86,11 @@
     "month": "September",
     "year": "2022",
     "author": "Charlie",
-    "authorImg": "/img/Charlie_Brown.png"
+    "authorImg": "/img/Charlie_Brown.png",
+    "authorTitle": "Charlie–– contemporary pattern createur and researcher",
+    "authorLocation": "France",
+    "authorSince": 2020,
+    "authorInfo": "Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit."
   },
   {
     "id": 5,
@@ -93,7 +109,11 @@
     "month": "January",
     "year": "2020",
     "author": "Franklin",
-    "authorImg": "/img/Franklin.png"
+    "authorImg": "/img/Franklin.png",
+    "authorTitle": "Franklin–– textile engineer and poete",
+    "authorLocation": "Switzerland",
+    "authorSince": 2021,
+    "authorInfo": "Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit."
   },
   {
     "id": 6,
@@ -112,6 +132,10 @@
     "month": "January",
     "year": "2023",
     "author": "Lucy",
-    "authorImg": "/img/Lucy_van_Pelt.png"
+    "authorImg": "/img/Lucy_van_Pelt.png",
+    "authorTitle": "Lucy–– magician of mix and match and color lover",
+    "authorLocation": "Turkey",
+    "authorSince": 2021,
+    "authorInfo": "Sequi modi porro cumque necessitatibus consectetur quaeratb landitiis est odio recusandae nam deserunt omnis quisquam dolorum adlabore nisi molestias, eum soluta.Lorem ipsum dolor, sit amet consectetur adipisicing elit."
   }
 ]

@@ -22,7 +22,7 @@ function MenuList({ menuList, mapRef }) {
           </Link>
         ))}
       </div>
-      <div className="lg:hidden">
+      <div className="">
         <LoginForm />
       </div>
     </div>

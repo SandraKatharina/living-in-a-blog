@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import MenuList from "./MenuList";
 import { Link } from "wouter";
-import LoginForm from "./LoginForm";
 
-function HeaderBar({ mapRef, destinations }) {
+function HeaderBar({ mapRef }) {
   const [showMenu, setShowMenu] = useState(false);
   const [menuList, setMenuList] = useState([]);
 
@@ -43,15 +42,12 @@ function HeaderBar({ mapRef, destinations }) {
             ) : (
               <FiX className="h-16 w-16" />
             )}
-          </button>
+          </button>{" "}
         </div>
-        <div className="fixed right-0 w-1/2">
+        <div className="fixed right-0 w-1/2 md:w-1/4">
           <ul>
             {showMenu && <MenuList menuList={menuList} mapRef={mapRef} />}
           </ul>
-        </div>
-        <div className="hidden sm:hidden lg:visible">
-          <LoginForm />
         </div>
       </header>
     </>
