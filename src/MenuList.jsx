@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 
 function MenuList({ menuList, mapRef }) {
   return (
-    <div className="flex h-screen flex-col bg-water px-4 uppercase text-white">
+    <div className="flex h-screen flex-col bg-water px-4 text-base uppercase text-white sm:text-xl lg:text-2xl">
       <div>
         {menuList.map((item) => (
           <Link
@@ -16,7 +16,7 @@ function MenuList({ menuList, mapRef }) {
               });
             }}
           >
-            <li className="my-1 cursor-pointer list-none hover:text-midnight">
+            <li className="my-4 cursor-pointer list-none hover:text-midnight">
               {item.caption}
             </li>
           </Link>

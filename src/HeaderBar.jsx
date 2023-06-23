@@ -30,7 +30,7 @@ function HeaderBar({ mapRef }) {
               />
             </button>
           </Link>
-          <span className="text-md inline-flex h-16 w-16 items-center justify-center text-center uppercase text-midnight md:w-48 md:text-xl ">
+          <span className="lg:w- inline-flex h-16 w-20 items-center justify-center text-center text-base uppercase text-midnight sm:w-48 sm:text-xl md:text-xl lg:text-2xl ">
             living in a blog
           </span>
           <button
