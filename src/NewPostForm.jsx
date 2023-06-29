@@ -8,7 +8,7 @@ function NewPostForm({ mapRef }) {
       <div className="mx-12 my-4 border-y border-black p-2 text-center text-xl uppercase">
         new post
       </div>
-      <form className="my-6 flex flex-col items-center justify-around">
+      <form className="mx-5 my-6 flex flex-col items-center justify-around">
         <input
           type="text"
           placeholder="City"

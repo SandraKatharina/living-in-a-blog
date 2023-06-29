@@ -18,5 +18,10 @@
     "id": 4,
     "target": "/newpost",
     "caption": "NEW POST"
+  },
+  {
+    "id": 5,
+    "target": "/allposts",
+    "caption": "ALL POSTS"
   }
 ]

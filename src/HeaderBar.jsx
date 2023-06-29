@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiSearch } from "react-icons/fi";
 import MenuList from "./MenuList";
 import { Link } from "wouter";
 
@@ -18,7 +18,7 @@ function HeaderBar({ mapRef }) {
       <header className="fixed z-20 bg-water">
         <div className="h-18 inline-flex w-screen items-center justify-around py-2">
           <Link href="/">
-            <button className="h-16 w-16 text-midnight hover:text-landscape">
+            <button className="h-12 w-12 text-midnight hover:text-landscape">
               <img
                 src={"/sLogo-indigo-700.svg"}
                 onClick={(e) => {
@@ -30,20 +30,21 @@ function HeaderBar({ mapRef }) {
               />
             </button>
           </Link>
-          <span className="lg:w- inline-flex h-16 w-20 items-center justify-center text-center text-base uppercase text-midnight sm:w-48 sm:text-xl md:text-xl lg:text-2xl ">
+          <span className="inline-flex h-12 w-[85px] items-center justify-center text-center text-base uppercase text-midnight sm:w-48 sm:text-xl md:text-xl lg:text-2xl ">
             living in a blog
           </span>
           <button
             onClick={() => setShowMenu((prev) => !prev)}
-            className="h-16 w-16 text-white hover:text-landscape"
+            className="h-12 w-12 text-white hover:text-landscape"
           >
             {!showMenu ? (
-              <FiMenu className="h-16 w-16" />
+              <FiMenu className="h-12 w-12" />
             ) : (
-              <FiX className="h-16 w-16" />
+              <FiX className="h-12 w-12" />
             )}
           </button>{" "}
         </div>
+
         <div className="fixed right-0 w-1/2 md:w-1/4">
           <ul>
             {showMenu && <MenuList menuList={menuList} mapRef={mapRef} />}

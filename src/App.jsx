@@ -10,6 +10,7 @@ import AboutPage from "./AboutPage";
 import AboutAuthorSection from "./AboutAuthorSection";
 import ContactPage from "./ContactPage";
 import NewPostForm from "./NewPostForm";
+import AllPostsPage from "./AllPostsPage";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -30,13 +31,13 @@ function App() {
       <HeaderBar mapRef={mapRef} destinations={destinations} />
 
       <div className="flex h-[calc(100vh-32px)] flex-col md:flex-row-reverse">
-        <div className="z-10 h-1/2 w-full pt-20 md:h-full md:w-1/2">
+        <div className="z-10 h-1/2 w-full pt-16 md:h-full md:w-1/2">
           <MapContainer mapRef={mapRef} destinations={destinations} />
         </div>
         <div className="h-1/2 w-full md:h-full md:w-1/2">
           <Route path="/">
-            <div className="mb-8 flex h-[calc(50vh-32px)] items-start overflow-x-scroll md:mb-0 md:mt-12 md:h-[calc(100vh-32px)] md:flex-col md:items-center md:overflow-y-scroll">
-              {destinations.map((destination) => (
+            <div className="flex h-[calc(50vh-32px)] items-start overflow-x-scroll md:mb-0 md:h-[calc(100vh-32px)] md:flex-col md:items-center md:overflow-y-scroll md:pt-16">
+              {destinations.slice(0, 4).map((destination) => (
                 <DestinationCard
                   destination={destination}
                   mapRef={mapRef}
@@ -65,7 +66,7 @@ function App() {
           </Route>
 
           <Route path="/about">
-            <div className="h-full overflow-scroll md:pt-20">
+            <div className="h-full overflow-scroll md:pt-16">
               <div>
                 <AboutPage mapRef={mapRef} />
               </div>
@@ -82,6 +83,13 @@ function App() {
           </Route>
           <Route path="/newpost">
             <NewPostForm mapRef={mapRef} />
+          </Route>
+          <Route path="/allposts">
+            <div className="h-full overflow-scroll md:pt-16">
+              {destinations.map((destination) => (
+                <AllPostsPage destination={destination} key={destination.id} />
+              ))}
+            </div>
           </Route>
         </div>
       </div>

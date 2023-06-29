@@ -25,7 +25,7 @@ function MapContainer({ destinations, mapRef }) {
           pitch: 0,
         }}
         ref={mapRef}
-        className="h-1/2 md:h-full"
+        className="h-3/4 md:h-full"
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         // scrollZoom={false}
