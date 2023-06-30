@@ -5,12 +5,13 @@ import MapContainer from "./MapContainer";
 import DestinationCard from "./DestinationCard";
 import DestinationDetail from "./DestinationDetail";
 import { useEffect, useState, useRef } from "react";
-import { Route, Redirect } from "wouter";
+import { Route, Redirect, Link } from "wouter";
 import AboutPage from "./AboutPage";
 import AboutAuthorSection from "./AboutAuthorSection";
 import ContactPage from "./ContactPage";
 import NewPostForm from "./NewPostForm";
-import AllPostsPage from "./AllPostsPage";
+import AllPostsPageCard from "./AllPostsPageCard";
+import { FiArrowLeft } from "react-icons/fi";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -86,8 +87,23 @@ function App() {
           </Route>
           <Route path="/allposts">
             <div className="h-full overflow-scroll md:pt-16">
+              <Link
+                href="/"
+                onClick={(e) => {
+                  mapRef.current.easeTo({
+                    center: [9.993682, 0.993682],
+                    zoom: 0,
+                  });
+                }}
+              >
+                <FiArrowLeft className="fixed mt-4 h-12 w-12 cursor-pointer text-desert hover:text-water" />
+              </Link>
               {destinations.map((destination) => (
-                <AllPostsPage destination={destination} key={destination.id} />
+                <AllPostsPageCard
+                  destination={destination}
+                  key={destination.id}
+                  mapRef={mapRef}
+                />
               ))}
             </div>
           </Route>
