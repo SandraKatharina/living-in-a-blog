@@ -3,7 +3,7 @@ import LinkArrowBackToHome from "./LinkArrowBackToHome";
 
 function DestinationDetail({ destination, mapRef }) {
   return (
-    <div className="h-full overflow-scroll sm:pt-20">
+    <div className="h-full overflow-scroll sm:pt-16">
       <LinkArrowBackToHome mapRef={mapRef} />
       <h1 className="mx-12 my-4 border-y border-black p-2 text-center text-xl uppercase">
         {destination.city}

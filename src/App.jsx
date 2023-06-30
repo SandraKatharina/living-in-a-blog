@@ -66,7 +66,7 @@ function App() {
           </Route>
 
           <Route path="/about">
-            <div className="h-full overflow-scroll md:pt-16">
+            <div className="h-full overflow-scroll bg-landscape md:pt-16">
               <div>
                 <AboutPage mapRef={mapRef} />
               </div>

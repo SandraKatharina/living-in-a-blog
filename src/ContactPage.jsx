@@ -3,7 +3,7 @@ import { Link } from "@react-email/link";
 
 function ContactPage({ mapRef }) {
   return (
-    <div className="h-full overflow-scroll sm:pt-20">
+    <div className="h-full overflow-scroll bg-desert sm:pt-16">
       <LinkArrowBackToHome mapRef={mapRef} />
 
       <div className="mx-12 my-4 border-y border-black p-2 text-center text-xl uppercase">
