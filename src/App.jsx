@@ -86,7 +86,7 @@ function App() {
             <NewPostForm mapRef={mapRef} />
           </Route>
           <Route path="/allposts">
-            <div className="h-full overflow-scroll md:pt-16">
+            <div className="h-full overflow-scroll bg-midnight md:pt-16">
               <Link
                 href="/"
                 onClick={(e) => {
@@ -98,6 +98,9 @@ function App() {
               >
                 <FiArrowLeft className="fixed mt-4 h-12 w-12 cursor-pointer text-desert hover:text-water" />
               </Link>
+              <div className="mx-12 my-4 border-y border-white p-2 text-center text-xl uppercase text-white">
+                all Posts
+              </div>
               {destinations.map((destination) => (
                 <AllPostsPageCard
                   destination={destination}

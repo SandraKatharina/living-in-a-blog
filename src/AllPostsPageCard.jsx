@@ -2,8 +2,8 @@ import { Link } from "wouter";
 
 function AllPostsPageCard({ destination, mapRef }) {
   return (
-    <div className="flex w-screen bg-midnight pl-12 md:w-full">
-      <div className="h-40 w-full p-2">
+    <div className="flex w-screen bg-midnight px-12 md:w-full">
+      <div className="h-40 w-3/4 py-2">
         <Link
           key={destination.id}
           href={"/destination/" + destination.id}
