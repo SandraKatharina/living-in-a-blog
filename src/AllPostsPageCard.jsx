@@ -38,6 +38,8 @@ function AllPostsPageCard({ destination, mapRef }) {
                 src={destination.authorImg}
               />
               <p className="md:text-md line-clamp-1 flex items-center justify-center text-xs font-bold text-white hover:text-water">
+                by
+                <br />
                 {destination.author}
               </p>
             </div>

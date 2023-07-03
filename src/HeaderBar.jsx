@@ -18,9 +18,15 @@ function HeaderBar({ mapRef }) {
       <header className="fixed z-20 bg-water">
         <div className="h-18 inline-flex w-screen items-center justify-around py-2">
           <Link href="/">
-            <button className="h-12 w-12 text-midnight hover:text-landscape">
+            <button className="h-12 w-12 text-midnight">
               <img
                 src={"/sLogo-indigo-700.svg"}
+                onMouseOver={(e) =>
+                  (e.currentTarget.src = "/sLogo-fuchsia-500.svg")
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.src = "/sLogo-indigo-700.svg")
+                }
                 onClick={(e) => {
                   mapRef.current.easeTo({
                     center: [9.993682, 9.993682],
