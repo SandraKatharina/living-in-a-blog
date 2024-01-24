@@ -32,7 +32,7 @@ function ContactPage({ mapRef }) {
           This travelling blog aims to present the beauty and magic of
           traditional craft so together we can create a world wide community
           without borders. It was iniciated by Sandra Schollmeyer, a textile
-          artist, designer and researcher based in Hmaburg, Germany. The project
+          artist, designer and researcher based in Hamburg, Germany. The project
           is part of the full stack web developement course of{" "}
           <Link href="https://hamburgcodingschool.com/">
             <span className="font-bold uppercase text-midnight hover:text-fuchsia-500">
