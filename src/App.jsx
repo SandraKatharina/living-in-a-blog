@@ -22,7 +22,8 @@ function App() {
       .then((destinations) => {
         destinations.sort((a, b) => b.year - a.year);
         setDestinations(destinations);
-      });
+      })
+      .catch((error) => console.error("Error:", error));
   }, []);
 
   const mapRef = useRef();
