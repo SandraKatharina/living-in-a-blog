@@ -89,7 +89,7 @@ function App() {
             <div className="h-full overflow-scroll bg-midnight md:pt-16">
               <Link
                 href="/"
-                onClick={(e) => {
+                onClick={() => {
                   mapRef.current.easeTo({
                     center: [9.993682, 0.993682],
                     zoom: 0,
