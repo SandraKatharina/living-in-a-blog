@@ -10,7 +10,8 @@ function HeaderBar({ mapRef }) {
   useEffect(() => {
     fetch("/menuList.json")
       .then((data) => data.json())
-      .then((menuList) => setMenuList(menuList));
+      .then((menuList) => setMenuList(menuList))
+      .catch((error) => console.error("Error:", error));
   }, []);
 
   return (
@@ -28,7 +29,7 @@ function HeaderBar({ mapRef }) {
                   (e.currentTarget.src = "/sLogo-indigo-700.svg")
                 }
                 onClick={(e) => {
-                  mapRef.current.easeTo({
+                  e.mapRef.current.easeTo({
                     center: [9.993682, 9.993682],
                     zoom: 0,
                   });

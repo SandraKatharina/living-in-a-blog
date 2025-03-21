@@ -6,7 +6,7 @@ function LinkArrowBackToHome({ mapRef }) {
     <Link
       href="/"
       onClick={(e) => {
-        mapRef.current.easeTo({
+        e.mapRef.current.easeTo({
           center: [9.993682, 0.993682],
           zoom: 0,
         });

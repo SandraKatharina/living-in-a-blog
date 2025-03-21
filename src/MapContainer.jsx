@@ -44,7 +44,7 @@ function MapContainer({ destinations, mapRef }) {
               // with `closeOnClick: true`
               e.originalEvent.stopPropagation();
               setPopupInfo(destination);
-              mapRef.current.easeTo({
+              e.mapRef.current.easeTo({
                 center: [destination.longitude, destination.latitude],
                 zoom: 7,
               });

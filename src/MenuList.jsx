@@ -10,7 +10,7 @@ function MenuList({ menuList, mapRef }) {
             key={item.id}
             href={item.target}
             onClick={(e) => {
-              mapRef.current.easeTo({
+              e.mapRef.current.easeTo({
                 center: [9.993682, 9.993682],
                 zoom: 0,
               });

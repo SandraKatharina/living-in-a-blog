@@ -13,6 +13,7 @@ import NewPostForm from "./NewPostForm";
 import AllPostsPageCard from "./AllPostsPageCard";
 import { FiArrowLeft } from "react-icons/fi";
 
+
 function App() {
   const [destinations, setDestinations] = useState([]);
 
